@@ -1,5 +1,7 @@
 let inits = [];
 
+roll();
+
 $('#init-add').on('click', () => {
 	try {
 		const name = $('#init-name')[0].value;
@@ -7,6 +9,7 @@ $('#init-add').on('click', () => {
 		const mod = Number.parseInt($('#init-mod')[0].value, 10);
 		inits.push({name, score, mod, active: false});
 		updateInitTable();
+		roll();
 	} catch (error) {
 		console.error(error);
 		$('body').toast({
@@ -30,6 +33,12 @@ $('#init-next').on('click', () => {
 		});
 	}
 });
+
+$('#init-rand').on('click', roll);
+
+function roll() {
+	$('#init-init').val(Math.round(Math.random() * 20));
+}
 
 function updateInitTable() {
 	inits = inits.sort((a, b) => {
