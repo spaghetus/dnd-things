@@ -76,7 +76,7 @@ function updateInitTable() {
 	}
 }
 
-function nextPlayer() {
+function nextPlayer(offset) {
 	if (inits.length === 0) {
 		return;
 	}
@@ -86,16 +86,15 @@ function nextPlayer() {
 			i = Number.parseInt(i, 10);
 			if (inits[i].active) {
 				inits[i].active = false;
-				if (i + 1 >= inits.length) {
-					inits[0].active = true;
-				} else {
-					inits[i + 1].active = true;
-				}
-
+				inits[betterMod((i + offset), inits.length)].active = true;
 				return;
 			}
 		}
 	}
 
 	inits[0].active = true;
+}
+
+function betterMod(a, n) {
+	return ((a % n) + n) % n;
 }
