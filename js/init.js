@@ -10,6 +10,12 @@ $('#init-add').on('click', () => {
 		inits.push({name, score, mod, active: false});
 		updateInitTable();
 		roll();
+		const counterTest = /\d+$/;
+		if (counterTest.test(name)) {
+			const number = Number.parseInt(name.match(counterTest), 10);
+			const nextName = name.replace(counterTest, number + 1);
+			$('#init-name').val(nextName);
+		}
 	} catch (error) {
 		console.error(error);
 		$('body').toast({
