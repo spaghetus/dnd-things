@@ -22,7 +22,21 @@ $('#init-add').on('click', () => {
 
 $('#init-next').on('click', () => {
 	try {
-		nextPlayer();
+		nextPlayer(1);
+		updateInitTable();
+	} catch (error) {
+		console.error(error);
+		$('body').toast({
+			title: 'Error moving to the next player!',
+			message: 'Check the logs for details.',
+			class: 'error'
+		});
+	}
+});
+
+$('#init-back').on('click', () => {
+	try {
+		nextPlayer(-1);
 		updateInitTable();
 	} catch (error) {
 		console.error(error);
