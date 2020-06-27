@@ -73,7 +73,7 @@ function nextPlayer() {
 	}
 
 	for (let i in inits) {
-		if (inits[i].isInteger()) {
+		if (inits[i].name) {
 			i = Number.parseInt(i, 10);
 			if (inits[i].active) {
 				inits[i].active = false;
