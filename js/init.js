@@ -91,7 +91,10 @@ function updateInitTable() {
 			</div>
 		</div>`);
 		if (i.active) {
-			$('#init-table').children().last()[0].scrollIntoView({behavior: 'smooth'});
+			$('#init-table').children().last()[0].scrollIntoView({
+				behavior: 'smooth',
+				block: 'nearest'
+			});
 		}
 	}
 }
