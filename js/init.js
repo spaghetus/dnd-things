@@ -57,7 +57,7 @@ $('#init-back').on('click', () => {
 $('#init-rand').on('click', roll);
 
 function roll() {
-	$('#init-init').val(Math.round(Math.random() * 20));
+	$('#init-init').val(Math.round(1 + (Math.random() * 19)));
 }
 
 function updateInitTable() {
