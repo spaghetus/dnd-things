@@ -62,19 +62,19 @@ function roll() {
 
 function updateInitTable() {
 	inits = inits.sort((a, b) => {
-		if (a.score === b.score) {
+		if (a.score + a.mod === b.score + b.mod) {
 			return a.mod < b.mod;
 		}
 
-		return a.score < b.score;
+		return a.score + a.mod < b.score + b.mod;
 	});
 	$('#init-table').empty();
 	for (const i of inits) {
 		$('#init-table').append(`<div class="row">
-			<div class="ui one wide column">
-				<i class="ui ${i.active ? 'walking' : 'bed'} icon"></i>
-			</div>
-			<div class="ui seven wide column">
+			${i.active ? `<div class="ui one wide column">
+				<i class="ui walking icon"></i>
+			</div>` : ''}
+			<div class="ui ${i.active ? 'seven' : 'eight'} wide column">
 			${i.active ? '<b>' : ''}
 				${i.name}
 			${i.active ? '</b>' : ''}
