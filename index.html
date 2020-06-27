@@ -12,71 +12,71 @@
 </head>
 
 <body>
-	<div class="center-parent">
-		<div class="ui grid container">
+	<br>
+	<br>
+	<div class="ui grid container">
 
-			<div class="ui top attached tabular menu fullscreen">
-				<div class="active item" data-tab="init">Initiative</div>
-			</div>
+		<div class="ui top attached tabular menu fullscreen">
+			<div class="active item" data-tab="init">Initiative</div>
+		</div>
 
-			<div class="ui bottom attached active tab segment" data-tab="init">
+		<div class="ui bottom attached active tab segment" data-tab="init">
 
-				<div class="ui divided grid">
+			<div class="ui divided grid">
 
-					<div class="ui six wide center aligned column">
+				<div class="ui six wide center aligned column">
 
-						<div class="ui fluid vertical menu">
-							<div class="ui item header">Add a character</div>
-							<div class="item">
-								<div class="ui transparent fluid icon input">
-									<input type="text" placeholder="Character Name" id="init-name">
-									<i class="ui user icon"></i>
-								</div>
-							</div>
-							<div class="item">
-								<div class="ui transparent fluid icon input">
-									<input type="number" placeholder="Roll" id="init-init">
-									<i class="ui dice d20 link icon" id="init-rand"></i>
-								</div>
-							</div>
-							<div class="item">
-								<div class="ui transparent fluid icon input">
-									<input type="number" placeholder="Modifier" id="init-mod">
-									<i class="ui plus icon"></i>
-								</div>
-							</div>
-							<div class="inverted item">
-								<button class="ui fluid positive right labeled icon button" id="init-add">
-									Add
-									<i class="ui plus icon"></i>
-								</button>
+					<div class="ui fluid vertical menu">
+						<div class="ui item header">Add a character</div>
+						<div class="item">
+							<div class="ui transparent fluid icon input">
+								<input type="text" placeholder="Character Name" id="init-name">
+								<i class="ui user icon"></i>
 							</div>
 						</div>
-						<button class="ui fluid primary right labeled icon button" id="init-next">
-							Next player
-							<i class="ui down arrow icon"></i>
-						</button>
-						<button class="ui tiny negative right labeled icon button" id="init-back">
-							Wait, go back!
-							<i class="ui up arrow icon"></i>
-						</button>
-
-					</div>
-
-					<div class="ui ten wide center aligned column">
-						<div class="ui header">Table</div>
-						<div class="ui celled grid" id="init-table">
-							<div class="center aligned column">
-								Nothing's here yet...
+						<div class="item">
+							<div class="ui transparent fluid icon input">
+								<input type="number" placeholder="Roll" id="init-init">
+								<i class="ui dice d20 link icon" id="init-rand"></i>
 							</div>
+						</div>
+						<div class="item">
+							<div class="ui transparent fluid icon input">
+								<input type="number" placeholder="Modifier" id="init-mod" value="0">
+								<i class="ui plus icon"></i>
+							</div>
+						</div>
+						<div class="inverted item">
+							<button class="ui fluid positive right labeled icon button" id="init-add">
+								Add
+								<i class="ui plus icon"></i>
+							</button>
+						</div>
+					</div>
+					<button class="ui fluid primary right labeled icon button" id="init-next">
+						Next player
+						<i class="ui down arrow icon"></i>
+					</button>
+					<button class="ui tiny negative right labeled icon button" id="init-back">
+						Wait, go back!
+						<i class="ui up arrow icon"></i>
+					</button>
+
+				</div>
+
+				<div class="ui ten wide center aligned column">
+					<div class="ui header">Table</div>
+					<div class="ui celled grid" id="init-table">
+						<div class="center aligned column">
+							Nothing's here yet...
 						</div>
 					</div>
 				</div>
-				<script src="js/init.js">
-				</script>
 			</div>
-			<div>
-			</div>
+			<script src="js/init.js">
+			</script>
+		</div>
+		<div>
 		</div>
 </body>
 
