@@ -56,6 +56,22 @@ $('#init-back').on('click', () => {
 
 $('#init-rand').on('click', roll);
 
+$('#remove-entry').on('click', () => {
+	try {
+		const index = parseInt($('#entry-to-remove')[0].value)
+		console.log(index);
+		inits.splice(index, 1);
+		updateInitTable();
+	} catch (error) {
+		console.error(error);
+		$('body').toast({
+			title: 'Error removing the entry!',
+			message: 'Check the logs for details.',
+			class: 'error'
+		});
+	}
+})
+
 function roll() {
 	$('#init-init').val(Math.round(1 + (Math.random() * 19)));
 }
