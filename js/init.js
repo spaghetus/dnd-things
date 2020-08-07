@@ -58,7 +58,7 @@ $('#init-rand').on('click', roll);
 
 $('#remove-entry').on('click', () => {
 	try {
-		const index = parseInt($('#entry-to-remove')[0].value)
+		const index = Number.parseInt($('#entry-to-remove')[0].value, 10);
 		console.log(index);
 		inits.splice(index, 1);
 		updateInitTable();
@@ -70,7 +70,7 @@ $('#remove-entry').on('click', () => {
 			class: 'error'
 		});
 	}
-})
+});
 
 function roll() {
 	$('#init-init').val(Math.round(1 + (Math.random() * 19)));
