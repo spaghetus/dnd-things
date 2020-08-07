@@ -1,5 +1,15 @@
 let inits = [];
 
+try {
+	inits = JSON.parse(sessionStorage.getItem('inits')) || [];
+	if (inits.length > 0) {
+		updateInitTable();
+	}
+} catch {
+	console.log('Couldn\'t load init storage');
+	inits = [];
+}
+
 roll();
 
 $('#init-add').on('click', () => {
@@ -77,6 +87,8 @@ function roll() {
 }
 
 function updateInitTable() {
+	sessionStorage.setItem('inits', JSON.stringify(inits));
+
 	inits = inits.sort((a, b) => {
 		if (a.score + a.mod === b.score + b.mod) {
 			return a.mod < b.mod;
