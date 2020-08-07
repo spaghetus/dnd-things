@@ -113,6 +113,12 @@ function updateInitTable() {
 			});
 		}
 	}
+
+	for (const [i, init] of inits.entries()) {
+		if (init.active) {
+			$('#entry-to-remove')[0].value = i;
+		}
+	}
 }
 
 function nextPlayer(offset) {
